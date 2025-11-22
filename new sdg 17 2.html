@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG Volunteer Collaboration</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <style>
+        :root {
+            --dark: #121212;
+            --card: #1e1e1e;
+            --text: #e0e0e0;
+            --blue: #4da6ff;
+            --blue-dark: #1f78d1;
+        }
+
+        body {
+            margin: 0;
+            background: var(--dark);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=60') center/cover;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+
+        section {
+            background: var(--card);
+            margin: 20px auto;
+            padding: 25px;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: var(--blue);
+        }
+
+        .sdg-section {
+            border-left: 4px solid var(--blue);
+            padding-left: 20px;
+        }
+
+        blockquote { 
+            background: #2a2a2a;
+            padding: 10px;
+            border-left: 4px solid var(--blue);
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background: var(--blue);
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn {
+            background: var(--blue);
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: var(--blue-dark);
+        }
+
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .metric-box {
+            background: #1c1c1c;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer {
+            background: #0d0d0d;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header data-aos="fade-down">
+    <h1>Collaborating for Change: Volunteer Groups on SDGs 1, 2, and 3</h1>
+</header>
+
+<section data-aos="fade-up">
+    <h2>Introduction</h2>
+    <p>
+        The Sustainable Development Goals (SDGs) aim to make the world a better place. 
+        SDG 1 (No Poverty), SDG 2 (Zero Hunger), and SDG 3 (Good Health) focus on helping people live safe, healthy, and happy lives.
+    </p>
+    <p>
+        Volunteers help these goals succeed by supporting communities and improving lives.
+    </p>
+</section>
+
+<section class="sdg-section" data-aos="fade-right">
+    <h2>SDG 1: No Poverty</h2>
+
+    <h3>Mission</h3>
+    <p>To support families and communities so they can escape poverty.</p>
+
+    <h3>Activities</h3>
+    <ul>
+        <li>Training on money management</li>
+        <li>Helping small businesses grow</li>
+        <li>Emergency help for families in need</li>
+    </ul>
+
+    <h3>Testimonials</h3>
+    <blockquote>“The training helped me start my own shop.” — Maria</blockquote>
+    <blockquote>“Helping others gives me purpose.” — Adeel</blockquote>
+</section>
+
+<section class="sdg-section" data-aos="fade-left">
+    <h2>SDG 2: Zero Hunger</h2>
+
+    <h3>Mission</h3>
+    <p>To make sure every person has access to healthy food.</p>
+
+    <h3>Activities</h3>
+    <ul>
+        <li>Community gardens</li>
+        <li>Sharing extra food to avoid waste</li>
+        <li>Teaching communities about nutrition</li>
+    </ul>
+
+    <h3>Testimonials</h3>
+    <blockquote>“The garden helps feed my family every week.” — Fatima</blockquote>
+    <blockquote>“Helping others eat healthy makes me proud.” — Jared</blockquote>
+</section>
+
+<section class="sdg-section" data-aos="fade-right">
+    <h2>SDG 3: Good Health</h2>
+
+    <h3>Mission</h3>
+    <p>To help communities stay healthy through clinics and support groups.</p>
+
+    <h3>Activities</h3>
+    <ul>
+        <li>Mobile clinics for checkups</li>
+        <li>Mental health support groups</li>
+        <li>School health and hygiene lessons</li>
+    </ul>
+
+    <h3>Testimonials</h3>
+    <blockquote>“The clinic saved my son’s life.” — Samuel</blockquote>
+    <blockquote>“The support circles help people feel heard.” — Leila</blockquote>
+</section>
+
+<section data-aos="fade-up">
+    <h2>Take Action Today</h2>
+    <p>You can help create a world where everyone is healthy, safe, and cared for.</p>
+
+    <a href="new Untitled 1.html" class="btn">Learn More About SDGs</a>
+</section>
+
+<section data-aos="zoom-in">
+    <h2>Impact Metrics</h2>
+
+    <div class="impact-metrics">
+        <div class="metric-box">1,500+ people trained</div>
+        <div class="metric-box">120 tons of food shared</div>
+        <div class="metric-box">22,000+ people helped by clinics</div>
+        <div class="metric-box">1,000+ hours of mental support</div>
+        <div class="metric-box">40+ community gardens</div>
+        <div class="metric-box">280+ small businesses started</div>
+    </div>
+</section>
+
+
+    <div class="metric-box" width="50%"><a href="image sdg 17.html" class="back-btn">← Back to Main Page</a></div> <br><br>
+    <div class="metric-box"><a href="initiatives sdg 17.html" class="next-btn"> -> Next Page </a></div>
+
+<footer>
+  <p>info@globalvolunteering.org</p>
+     <p>Follow us: Facebook | Instagram | Twitter | LinkedIn</p>
+
+</footer>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>

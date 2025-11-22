@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registration Form - Dark Theme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-dark: #222831;
+      --form-dark: #393e46;
+      --text-dark: #f0eaea;
+      --wave-dark: #05dcf8;
+      --button-dark: #05dcf8;
+      --shadow-dark: #05dcf8;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    .waves {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .waves svg {
+      width: 100%;
+      height: 100px;
+    }
+    .waves path {
+      animation: waveupdown 6s ease-in-out infinite;
+      opacity: 0.4;
+      fill: var(--wave-dark);
+    }
+    @keyframes waveupdown {
+      0%, 100% { transform: translateY(0); }
+      25% { transform: translateY(8px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-8px); }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 440px;
+      background: var(--form-dark);
+      padding: 24px 28px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px var(--shadow-dark);
+      margin: 140px auto 40px auto;
+      position: relative;
+      z-index: 5;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      text-align: center;
+      margin: 0 0 24px;
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 5px;
+      border: 1px solid #7a7e85;
+      margin-top: 6px;
+      background: #51565e;
+      color: #fafafa;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 48px;
+    }
+
+    button[type="submit"], #verify-btn {
+      background: var(--button-dark);
+      color: black;
+      border: none;
+      margin-top: 20px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .password-row {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .toggle-btn {
+      width: 48px;
+      padding: 8px;
+      cursor: pointer;
+      background: #616161;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .pw-error {
+      color: #ff6b6b;
+      font-size: 0.9em;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .otp-box {
+      text-align: center;
+      font-size: 1.17em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .country-select-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .country-select-row img {
+      width: 30px;
+      height: 20px;
+      border: 1.5px solid #999;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+      <path d="M0,40 Q150,120 400,40 Q500,0 500,70 L500,150 L0,150 Z"></path>
+    </svg>
+  </div>
+
+  <div class="container" id="form-container">
+    <h2>Registration Form</h2>
+
+    <form id="regForm" onsubmit="return goToOTP();" novalidate>
+
+      <label>Select Country:</label>
+      <div class="country-select-row">
+        <img id="flag" src="https://flagcdn.com/24x18/in.png" alt="flag" />
+        <select id="country" onchange="updateFlag()">
+          <option value="in" data-flag="https://flagcdn.com/24x18/in.png">India</option>
+          <option value="us" data-flag="https://flagcdn.com/24x18/us.png">United States</option>
+          <option value="gb" data-flag="https://flagcdn.com/24x18/gb.png">United Kingdom</option>
+          <option value="ca" data-flag="https://flagcdn.com/24x18/ca.png">Canada</option>
+        </select>
+      </div>
+
+      <label>First Name:</label>
+      <input type="text" id="fname" required />
+
+      <label>Last Name:</label>
+      <input type="text" id="lname" required />
+
+      <label>Age:</label>
+      <input type="number" id="age" min="1" required />
+
+      <label>Date of Birth:</label>
+      <input type="date" id="dob" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Country Code:</label>
+      <select id="countryCode" required>
+        <option value="+91">+91</option>
+        <option value="+1">+1</option>
+        <option value="+44">+44</option>
+      </select>
+
+      <label>Contact Number:</label>
+      <input type="tel" id="contact" pattern="[0-9]{10}" required />
+
+      <label>Address:</label>
+      <textarea id="address" rows="2" required></textarea>
+
+      <label>Set Password:</label>
+      <div class="password-row">
+        <input type="password" id="password" placeholder="At least 8 chars, 1 upper, 1 lower, 1 digit" oninput="validatePassword()" />
+        <div class="toggle-btn" onclick="togglePassword('password')">👁</div>
+      </div>
+
+      <div class="pw-error" id="pw-error"></div>
+
+      <label>Confirm Password:</label>
+      <div class="password-row">
+        <input type="password" id="confirmPassword" oninput="validatePassword()" />
+        <div class="toggle-btn" onclick="togglePassword('confirmPassword')">👁</div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- OTP Screen -->
+  <div class="container hidden" id="otp-container">
+    <h2>Enter OTP</h2>
+    <div class="otp-box">A 6-digit OTP has been sent</div>
+    <input type="text" id="otp-input" maxlength="6" placeholder="OTP" />
+    <button onclick="verifyOTP()" id="verify-btn">Verify OTP</button>
+  </div>
+
+  <script>
+    function updateFlag() {
+      const sel = document.getElementById("country");
+      const flagURL = sel.options[sel.selectedIndex].dataset.flag;
+      document.getElementById("flag").src = flagURL;
+    }
+    window.onload = updateFlag;
+
+    function togglePassword(id) {
+      const field = document.getElementById(id);
+      field.type = field.type === "password" ? "text" : "password";
+    }
+
+    function validatePassword() {
+      const pw = document.getElementById("password").value;
+      const cpw = document.getElementById("confirmPassword").value;
+      const err = document.getElementById("pw-error");
+      const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+      if (!regex.test(pw)) {
+        err.textContent = "Password is weak.";
+      } else if (cpw && pw !== cpw) {
+        err.textContent = "Passwords do not match.";
+      } else {
+        err.textContent = "";
+      }
+
+      err.style.display = err.textContent ? "block" : "none";
+    }
+
+    function goToOTP() {
+      if (document.getElementById("pw-error").textContent) return false;
+
+      document.getElementById("form-container").classList.add("hidden");
+      document.getElementById("otp-container").classList.remove("hidden");
+
+      window.generatedOTP = Math.floor(100000 + Math.random() * 900000);
+      alert("OTP: " + window.generatedOTP);
+
+      return false;
+    }
+
+    function verifyOTP() {
+      const userOtp = document.getElementById("otp-input").value;
+      if (userOtp == window.generatedOTP) {
+        alert("OTP verified! Registration complete.");
+      } else {
+        alert("Incorrect OTP. Try again.");
+      }
+    }
+  </script>
+
+<section>
+   <div class="metric-box"> <a href="events sdg 17.html" class="back-btn">← Previous Page</a></div>
+    
+</section>
+
+</body>
+</html>

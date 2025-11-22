@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Volunteering Portal – SDG 17</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #eaeaea;
+        }
+
+        header {
+            background: #111;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #00b4d8;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #90e0ef;
+        }
+
+        .banner {
+            background: url('https://images.pexels.com/photos/3184422/pexels-photo-3184422.jpeg')
+                        center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+        }
+
+        .banner * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner button {
+            margin-top: 20px;
+            background: #00b4d8;
+            padding: 12px 25px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1rem;
+            border-radius: 6px;
+        }
+
+        .banner button:hover {
+            background: #0890ac;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        footer {
+            background: #111;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        footer a {
+            color: #00b4d8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌐 Global Volunteering Portal</h1>
+    <nav>
+        <a href="image sdg 17.html">About Us</a>
+        <a href="new sdg 17 2.html">Mission</a>
+        <a href="initiatives sdg 17.html">Initiatives</a>
+        <a href="events sdg 17.html">Events</a>
+        <a href="registration sdg 17.html">Registration</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>Join Us in Achieving SDG 17</h2>
+    <p>Building partnerships for a sustainable future.</p>
+    <button onclick="explore()">Start Exploring</button>
+</section>
+
+<section>
+    <h2>What is SDG 17?</h2>
+    <p>
+        SDG 17 focuses on strengthening global partnerships to support the implementation 
+        of all Sustainable Development Goals. It highlights cooperation between 
+        governments, private sectors, and communities.
+    </p>
+</section>
+
+<section>
+    <h2>Volunteer Opportunities</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Community Partnership Building</h3>
+            <p>Help communities connect with global support networks.</p>
+        </div>
+
+        <div class="card">
+            <h3>Advocacy & Awareness</h3>
+            <p>Create events and campaigns that promote sustainability.</p>
+        </div>
+
+        <div class="card">
+            <h3>Training & Capacity Building</h3>
+            <p>Teach leadership and skills to empower others.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Success Stories</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Amina – Tanzania</h3>
+            <p>Built a women’s trade network helping 1,200 entrepreneurs.</p>
+        </div>
+
+        <div class="card">
+            <h3>Daniel – Philippines</h3>
+            <p>Brought online education tools to remote islands.</p>
+        </div>
+
+        <div class="card">
+            <h3>Sofia – Brazil</h3>
+            <p>Led volunteers restoring 80 hectares of land.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Upcoming Events</h2>
+    <ul style="list-style:none; padding:0; line-height:2;">
+        <li><strong>Dec 12:</strong> Global Partnership Webinar</li>
+        <li><strong>Jan 08:</strong> Volunteer Training Workshop</li>
+        <li><strong>Feb 20:</strong> SDG 17 Global Summit</li>
+    </ul>
+</section>
+
+<footer>
+    <p>Follow us: Facebook | Instagram | Twitter | LinkedIn</p>
+    <p>info@globalvolunteering.org</p>
+</footer>
+
+<script>
+    function explore() {
+        alert("Welcome! Start exploring volunteer opportunities.");
+    }
+</script>
+
+</body>
+
+</html>
